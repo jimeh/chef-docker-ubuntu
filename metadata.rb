@@ -1,0 +1,10 @@
+name             "docker-ubuntu"
+maintainer       "Jim Myhrberg"
+maintainer_email "contact@jimeh.me"
+license          "MIT"
+description      "Install Docker on Ubuntu based on the official instructions."
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          "0.1.0"
+recipe           "docker-ubuntu", "Installs docker"
+depends          "apt"
+supports         "ubuntu"
