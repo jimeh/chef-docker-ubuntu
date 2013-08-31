@@ -1,5 +1,5 @@
 if node["platform"] == "ubuntu"
-  package("curl") { action :install }
+  package "curl"
 
   bash "apt-key add docker" do
     code "curl https://get.docker.io/gpg | apt-key add -"
@@ -11,17 +11,13 @@ if node["platform"] == "ubuntu"
     notifies :run, "execute[apt-get update]", :immediately
   end
 
-  packages = []
   case node["platform_version"]
   when "12.04"
-    packages << "linux-image-generic-lts-raring"
-    packages << "linux-headers-generic-lts-raring"
+    package "linux-image-generic-lts-raring"
+    package "linux-headers-generic-lts-raring"
   when "13.04"
-    packages << "linux-image-extra-#{`uname -r`.strip}"
+    package "linux-image-extra-#{`uname -r`.strip}"
   end
-  packages << "lxc-docker"
 
-  packages.each do |pkgname|
-    package(pkgname) { action :install }
-  end
+  package "lxc-docker"
 end
