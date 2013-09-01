@@ -1,6 +1,6 @@
 # chef-docker-ubuntu
 
-Simple cookbook based off of Docker's official Ubuntu installation
+A simple cookbook based off of Docker's official Ubuntu installation
 [instructions](http://docs.docker.io/en/latest/installation/ubuntulinux/).
 
 ## Supported Platforms
@@ -14,7 +14,7 @@ Simple cookbook based off of Docker's official Ubuntu installation
 
 ## Recipes
 
-- `recipe[docker-ubuntu]` Installs/Configures Docker
+- `recipe[docker-ubuntu]` - Installs Docker.
 
 ## Todos
 
